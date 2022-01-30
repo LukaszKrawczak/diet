@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:mysql://brus5.asuscomm.com:3306/diet?useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=TRUE
+    username: admin
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  error:
+    whitelabel:
+      enabled: true
+      include-stacktrace: true
+      include-message: true
+
+
