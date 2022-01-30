@@ -10,7 +10,6 @@ public class DietApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DietApplication.class, args);
-        System.out.println("Test");
     }
 }
 
