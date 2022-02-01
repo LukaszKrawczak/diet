@@ -15,7 +15,6 @@ public class DietApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(DietApplication.class, args);
-        System.out.println("tu kornelia");
     }
 
     @Override
