@@ -25,7 +25,7 @@ public class DietApplication extends SpringBootServletInitializer {
 
     @RequestMapping(value = "/")
     public String hello() {
-        return "Hello world, witam po update ;) kolejny test pipeline git -> jenkins -> tomcat ";
+        return "Hello world, witam po update ;) kolejny test pipeline git -> jenkins -> tomcat test 1";
     }
 }
 
