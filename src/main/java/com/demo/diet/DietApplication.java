@@ -25,7 +25,7 @@ public class DietApplication extends SpringBootServletInitializer {
 
     @RequestMapping(value = "/")
     public String hello() {
-        return "Hello World from Tomcat";
+        return "Hello world, witam po update ;)";
     }
 }
 
