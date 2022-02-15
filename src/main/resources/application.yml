@@ -9,8 +9,8 @@ spring:
       enabled: always
   datasource:
     url: jdbc:mysql://brus5.asuscomm.com:3306/diet?useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=TRUE
-    username:
-    password:
+    username: admin
+    password: ${db.password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 server:
