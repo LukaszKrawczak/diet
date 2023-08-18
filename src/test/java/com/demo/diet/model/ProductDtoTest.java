@@ -11,20 +11,20 @@ import javax.validation.ValidatorFactory;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 class ProductDtoTest {
 
     public static final String PROPER_NAME_VALUE = "aa";
-    public static final int NEGATIVE_KCAL_VALUE = -1;
-    public static final int PROPER_KCAL_VALUE = 100;
     public static final String WRONG_NAME_VALUE = "a";
     private ProductDto objectUnderTest;
     private Validator validator;
 
     @BeforeEach
     void setup() {
-        objectUnderTest = new ProductDto();
+        objectUnderTest = ProductDto.fromProduct(new Product());
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
@@ -33,7 +33,6 @@ class ProductDtoTest {
     void shouldThrowErrorWhenKcalValueHasNegativeValue() {
         // given
         objectUnderTest.setName(PROPER_NAME_VALUE);
-        objectUnderTest.setKcal(NEGATIVE_KCAL_VALUE);
 
         // when
         Set<ConstraintViolation<ProductDto>> violations = validator.validate(objectUnderTest);
@@ -46,7 +45,6 @@ class ProductDtoTest {
     void shouldReturnNoErrorsWhenProperValueHasBeenGiven() {
         // given
         objectUnderTest.setName(PROPER_NAME_VALUE);
-        objectUnderTest.setKcal(PROPER_KCAL_VALUE);
 
         // when
         Set<ConstraintViolation<ProductDto>> violations = validator.validate(objectUnderTest);
@@ -60,7 +58,6 @@ class ProductDtoTest {
         // given
         int moreThanFourDigits = 44444;
         objectUnderTest.setName(PROPER_NAME_VALUE);
-        objectUnderTest.setKcal(moreThanFourDigits);
 
         // when
         Set<ConstraintViolation<ProductDto>> violations = validator.validate(objectUnderTest);
@@ -125,7 +122,6 @@ class ProductDtoTest {
     void shouldReturnTrueWhenBothFieldsAreNotValidated() {
         // given
         objectUnderTest.setName(WRONG_NAME_VALUE);
-        objectUnderTest.setKcal(NEGATIVE_KCAL_VALUE);
 
         // when
         Set<ConstraintViolation<ProductDto>> violations = validator.validate(objectUnderTest);

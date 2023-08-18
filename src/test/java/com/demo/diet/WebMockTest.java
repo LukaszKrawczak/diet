@@ -37,23 +37,75 @@ public class WebMockTest {
         // given
         when(productsService.getAllProducts())
                 .thenReturn(List.of(
-                        new Product().setName("Bread").setKcal(200),
-                        new Product().setName("Milk").setKcal(300)
+                        new Product().setName("Bread"),
+                        new Product().setName("Milk")
                 ));
 
         // then
         this.mockMvc.perform(get("/api/products"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Bread")));
+                .andExpect(content().string(containsString("Bread")))
+                .andExpect(content().string(containsString("Milk")));
     }
 
     @Test
     void shouldReturnJsonObjectWhenGivenProperJsonBody() throws Exception {
         // given
-        ProductDto productDto = new ProductDto();
+        ProductDto productDto = ProductDto.fromProduct(new Product());
         productDto.setName("Bread");
-        productDto.setKcal(200);
+
+        // then
+        this.mockMvc.perform(post("/api/add-product")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(asJsonString(productDto)))
+                .andExpect(status().isCreated());
+    }
+
+    @Test
+    void shouldReturnErrorMessageWhenKcalHasNegativeValue() throws Exception {
+        // given
+        ProductDto productDto = ProductDto.fromProduct(new Product());
+        productDto.setName("Bread");
+
+        // then
+        this.mockMvc.perform(post("/api/add-product")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(asJsonString(productDto)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void shouldReturnErrorMessageWhenNameOfTheProductHasLessCharsThan2() throws Exception {
+        // given
+        ProductDto productDto = ProductDto.fromProduct(new Product());
+        productDto.setName("B");
+
+        // then
+        this.mockMvc.perform(post("/api/add-product")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(asJsonString(productDto)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void shouldReturnErrorMessageWhenNameOfTheProductHasEmptyName() throws Exception {
+        // given
+        ProductDto productDto = ProductDto.fromProduct(new Product());
+        productDto.setName("");
+
+        // then
+        this.mockMvc.perform(post("/api/add-product")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(asJsonString(productDto)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void shouldReturnStatusOKWhenKcalHasZeroValue() throws Exception {
+        // given
+        ProductDto productDto = ProductDto.fromProduct(new Product());
+        productDto.setName("Ice");
 
         // then
         this.mockMvc.perform(post("/api/add-product")
