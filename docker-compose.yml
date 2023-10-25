@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  mysql:
+    container_name: diet-mysql
+    hostname: diet-mysql
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: diet
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "~/mysql-data:/var/lib/mysql"
