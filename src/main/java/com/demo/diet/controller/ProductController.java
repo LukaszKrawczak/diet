@@ -33,7 +33,7 @@ public class ProductController {
         String productDtoName = productDto.getName();
         boolean productExists = productsService.getProductByName(productDtoName).isPresent();
         if (productExists) {
-            return new ResponseEntity<>("Product already exists", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(String.format("Product with name '%s' already exists", productDtoName), HttpStatus.CONFLICT);
         }
 
         log.info("ProductDto retrieved: " + productDto);
