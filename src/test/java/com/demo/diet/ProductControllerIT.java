@@ -1,9 +1,9 @@
 package com.demo.diet;
 
-import com.demo.diet.model.ProductDto;
+import com.demo.diet.dto.NutrientsDto;
+import com.demo.diet.dto.ProductDto;
 import com.demo.diet.model.ApiError;
 import com.demo.diet.model.ApiValidationError;
-import com.demo.diet.model.NutrientsDto;
 import com.demo.diet.model.ApiSubError;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

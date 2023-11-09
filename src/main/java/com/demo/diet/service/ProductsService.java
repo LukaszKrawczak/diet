@@ -5,20 +5,12 @@ import com.demo.diet.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class ProductsService {
     private final ProductRepository productRepository;
-
-    public List<Product> getAllProducts() {
-        return List.of(
-                new Product().setName("Bread"),
-                new Product().setName("Milk")
-        );
-    }
 
     public void saveProduct(Product product) {
         productRepository.save(product);
