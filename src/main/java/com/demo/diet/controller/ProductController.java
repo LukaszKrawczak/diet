@@ -2,7 +2,7 @@ package com.demo.diet.controller;
 
 import com.demo.diet.model.Nutrients;
 import com.demo.diet.model.Product;
-import com.demo.diet.model.ProductDto;
+import com.demo.diet.dto.ProductDto;
 import com.demo.diet.service.ProductsService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
