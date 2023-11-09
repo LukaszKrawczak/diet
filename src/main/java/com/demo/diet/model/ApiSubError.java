@@ -1,5 +1,2 @@
-package com.demo.diet.model;
-
-public abstract class ApiSubError {
-
+package com.demo.diet.model;public class ApiSubError {
 }
