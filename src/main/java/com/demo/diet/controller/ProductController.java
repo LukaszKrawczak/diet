@@ -4,6 +4,8 @@ import com.demo.diet.model.Nutrients;
 import com.demo.diet.model.Product;
 import com.demo.diet.model.ProductDto;
 import com.demo.diet.service.ProductsService;
+import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -33,7 +35,7 @@ public class ProductController {
         String productDtoName = productDto.getName();
         boolean productExists = productsService.getProductByName(productDtoName).isPresent();
         if (productExists) {
-            return new ResponseEntity<>(String.format("Product with name '%s' already exists", productDtoName), HttpStatus.CONFLICT);
+            throw new EntityExistsException("Product with name '" + productDtoName + "' already exists");
         }
 
         log.info("ProductDto retrieved: " + productDto);
@@ -50,7 +52,7 @@ public class ProductController {
     public ResponseEntity<ProductDto> getProduct(@PathVariable Integer id) {
         Optional<Product> product = productsService.getProduct(id);
         if (product.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new EntityNotFoundException("Product with id '" + id + "' not found");
         }
         ProductDto productDto = ProductDto.fromProduct(product.get());
         log.info("ProductDto retrieved: " + productDto);
