@@ -1,7 +1,7 @@
-package com.demo.diet.service;
+package com.brus5.diet.service;
 
-import com.demo.diet.model.Product;
-import com.demo.diet.repository.ProductRepository;
+import com.brus5.diet.model.Product;
+import com.brus5.diet.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

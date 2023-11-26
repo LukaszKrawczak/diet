@@ -1,7 +1,7 @@
-package com.demo.diet.exception;
+package com.brus5.diet.exception;
 
-import com.demo.diet.model.ApiError;
-import com.demo.diet.model.ApiValidationError;
+import com.brus5.diet.model.ApiError;
+import com.brus5.diet.model.ApiValidationError;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;

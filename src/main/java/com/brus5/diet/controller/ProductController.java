@@ -1,9 +1,9 @@
-package com.demo.diet.controller;
+package com.brus5.diet.controller;
 
-import com.demo.diet.model.Nutrients;
-import com.demo.diet.model.Product;
-import com.demo.diet.dto.ProductDto;
-import com.demo.diet.service.ProductsService;
+import com.brus5.diet.model.Nutrients;
+import com.brus5.diet.model.Product;
+import com.brus5.diet.dto.ProductDto;
+import com.brus5.diet.service.ProductsService;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
-package com.demo.diet.dto;
+package com.brus5.diet.dto;
 
-import com.demo.diet.model.Nutrients;
+import com.brus5.diet.model.Nutrients;
 import lombok.Builder;
 import lombok.Data;
 

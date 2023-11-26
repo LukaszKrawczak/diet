@@ -1,7 +1,7 @@
-package com.demo.diet.dto;
+package com.brus5.diet.dto;
 
-import com.demo.diet.model.Nutrients;
-import com.demo.diet.model.Product;
+import com.brus5.diet.model.Nutrients;
+import com.brus5.diet.model.Product;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 

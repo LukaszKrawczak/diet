@@ -1,4 +1,4 @@
-package com.demo.diet.entity;
+package com.brus5.diet.entity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
-package com.demo.diet.repository;
+package com.brus5.diet.repository;
 
-import com.demo.diet.model.Product;
+import com.brus5.diet.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

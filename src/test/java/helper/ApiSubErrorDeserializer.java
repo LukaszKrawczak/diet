@@ -1,7 +1,7 @@
 package helper;
 
-import com.demo.diet.model.ApiSubError;
-import com.demo.diet.model.ApiValidationError;
+import com.brus5.diet.model.ApiSubError;
+import com.brus5.diet.model.ApiValidationError;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;

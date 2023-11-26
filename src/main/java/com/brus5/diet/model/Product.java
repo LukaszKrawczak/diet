@@ -1,4 +1,4 @@
-package com.demo.diet.model;
+package com.brus5.diet.model;
 
 import lombok.*;
 import lombok.experimental.Accessors;

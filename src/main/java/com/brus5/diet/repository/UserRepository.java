@@ -1,6 +1,6 @@
-package com.demo.diet.repository;
+package com.brus5.diet.repository;
 
-import com.demo.diet.entity.User;
+import com.brus5.diet.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

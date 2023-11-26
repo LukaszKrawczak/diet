@@ -1,4 +1,4 @@
-package com.demo.diet;
+package com.brus5.diet;
 
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.testcontainers.containers.MySQLContainer;

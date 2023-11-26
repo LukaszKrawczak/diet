@@ -8,12 +8,12 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.demo</groupId>
+    <groupId>com.brus5</groupId>
     <artifactId>diet</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
     <name>diet</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Module responsible for diet requests</description>
     <properties>
         <java.version>17</java.version>
     </properties>

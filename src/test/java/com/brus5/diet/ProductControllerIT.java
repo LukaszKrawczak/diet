@@ -1,10 +1,10 @@
-package com.demo.diet;
+package com.brus5.diet;
 
-import com.demo.diet.dto.NutrientsDto;
-import com.demo.diet.dto.ProductDto;
-import com.demo.diet.model.ApiError;
-import com.demo.diet.model.ApiValidationError;
-import com.demo.diet.model.ApiSubError;
+import com.brus5.diet.dto.NutrientsDto;
+import com.brus5.diet.dto.ProductDto;
+import com.brus5.diet.model.ApiError;
+import com.brus5.diet.model.ApiValidationError;
+import com.brus5.diet.model.ApiSubError;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
